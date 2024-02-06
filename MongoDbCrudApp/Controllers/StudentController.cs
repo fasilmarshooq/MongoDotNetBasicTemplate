@@ -5,17 +5,12 @@ using MongoDbCrudApp.Services;
 namespace MongoDbCrudApp.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
-    public class StudentController : ControllerBase
+    public class StudentController(IStudentService studentService) : ControllerBase
     {
-        private readonly IStudentService _studentService;
+        private readonly IStudentService _studentService = studentService;
 
-        public StudentController(IStudentService studentService)
-        {
-            _studentService = studentService;
-        }
-
-        [HttpPost(Name = "AddStudent")]
+        [Route("Student/Add")]
+        [HttpPost]
         public ActionResult AddStudent(Student student)
         {
             try
@@ -30,7 +25,8 @@ namespace MongoDbCrudApp.Controllers
 
         }
 
-        [HttpGet(Name = "GetAllStudents")]
+        [Route("Student/GetAll")]
+        [HttpGet]
         public ActionResult<IEnumerable<Student>> GetAllStudents()
         {
             var result = _studentService.GetAllStudents();
