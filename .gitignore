@@ -6,3 +6,7 @@
 /MongoDbCrudApp/bin/Debug/net8.0
 /MongoDbCrudApp/obj
 *.user
+.vs/ProjectEvaluation/mongodbcrudapp.metadata.v7.bin
+.vs/ProjectEvaluation/mongodbcrudapp.projects.v7.bin
+/MongoDotNetMigratorLight/bin/Debug/net8.0
+/MongoDotNetMigratorLight/obj
